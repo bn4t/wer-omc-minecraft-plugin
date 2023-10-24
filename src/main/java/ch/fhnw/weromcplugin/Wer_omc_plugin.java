@@ -16,6 +16,7 @@ public final class Wer_omc_plugin extends JavaPlugin {
         Path path = new Path(new Location(getServer().getWorld("world"), 0, 2, 0));
 
 
+        // create a path to check for diamonds using the Path class
         for (int i = 0; i < 3; i++) {
             path.DigDown(1);
             path.DigBackward(1);
@@ -28,6 +29,7 @@ public final class Wer_omc_plugin extends JavaPlugin {
         }
 
 
+        // check for diamonds in the path asynchronously
         new BukkitRunnable() {
             @Override
             public void run() {
@@ -42,6 +44,8 @@ public final class Wer_omc_plugin extends JavaPlugin {
     }
 
 
+    // iterate thourhg the list of provided coordinates and check if there are diamonds.
+    // return a list of all coordinates where diamonds are found.
     public List<Location> getDiamondsForCoordinates(List<Location> locations) {
         List<Location> diamonds = new ArrayList<Location>();
         World world = getServer().getWorld("world");
