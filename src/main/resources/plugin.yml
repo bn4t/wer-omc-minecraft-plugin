@@ -1,0 +1,4 @@
+name: wer-omc-plugin
+version: '${project.version}'
+main: ch.fhnw.weromcplugin.Wer_omc_plugin
+api-version: '1.20'
